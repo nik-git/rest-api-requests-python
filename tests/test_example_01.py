@@ -1,10 +1,13 @@
 import requests
+import pytest
 
 
+@pytest.mark.smoke
 def test_get_status_code_200():
     response = requests.get("http://api.zippopotam.us/us/90210")
     assert response.status_code == 200
     print(response.status_code)
+
 
 def test_get_content_type():
     response = requests.get("http://api.zippopotam.us/us/90210")
